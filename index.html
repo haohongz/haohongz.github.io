@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Haohong (Austin) Zheng is an undergraduate in Statistics and Data Science at the University of Michigan, working on statistical inference for tabular foundation models and survival analysis with electronic health records.">
+<meta name="author" content="Haohong Zheng">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Haohong Zheng | 郑浩宏">
+<meta property="og:description" content="Haohong (Austin) Zheng is an undergraduate in Statistics and Data Science at the University of Michigan, working on statistical inference for tabular foundation models and survival analysis with electronic health records.">
+<meta property="og:image" content="photo.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23234d7d'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='16' fill='white' text-anchor='middle'%3EHZ%3C/text%3E%3C/svg%3E">
+<title>Haohong Zheng | 郑浩宏</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700&display=swap">
+<style>
+/* Layout follows a sticky-header, hero-with-profile-card, numbered-sections academic
+   template. Light-only by design, matching the reference site. */
+:root {
+  --bg: #fbfaf7; --surface: #ffffff; --alt: #f3f4f6;
+  --text: #17181c; --muted: #6d7179; --line: #dedfe3;
+  --blue: #234d7d; --blue-soft: #edf3f8; --green: #2e6a5b; --green-soft: #eaf5f1;
+  --warm: #8a5a2b; --warm-soft: #f9f0e4; --dark: #17191e; --dark-line: #2c2f35;
+  --max: 1120px;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Songti SC", STSong, Georgia, serif;
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+img { max-width: 100%; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 15px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+button { font: inherit; }
+h1, h2, h3, p { margin: 0; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+.container { width: min(calc(100% - 40px), var(--max)); margin: 0 auto; }
+
+/* header */
+.site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; background: rgba(251, 250, 247, 0.94); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(222, 223, 227, 0.86); }
+.nav { height: 70px; display: flex; align-items: center; gap: 26px; }
+.brand { margin-right: auto; text-decoration: none; font-size: 15px; font-weight: 750; white-space: nowrap; }
+.brand span { color: #8a8e95; margin-left: 5px; font-weight: 500; }
+.nav-links { display: flex; align-items: center; gap: 20px; }
+.nav-links a { text-decoration: none; color: var(--muted); font-size: 13px; font-weight: 650; }
+.nav-links a:hover { color: var(--text); }
+.nav-actions { display: flex; gap: 8px; }
+.lang-button, .menu-button { border: 1px solid var(--line); background: var(--surface); cursor: pointer; color: var(--text); }
+.lang-button { border-radius: 999px; padding: 6px 12px; font-size: 12px; font-weight: 700; }
+.menu-button { display: none; width: 38px; height: 38px; border-radius: 9px; }
+.menu-button span { width: 15px; height: 1.5px; background: var(--text); display: block; margin: 3.5px auto; }
+
+/* hero */
+.hero { padding: 72px 0 64px; display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(290px, 0.6fr); gap: 60px; align-items: center; }
+.eyebrow { margin: 0 0 15px; color: var(--blue); text-transform: uppercase; letter-spacing: 0.11em; font-size: 11px; font-weight: 800; }
+.hero h1 { font-family: var(--serif); font-size: clamp(54px, 7vw, 84px); line-height: 0.98; letter-spacing: -0.04em; font-weight: 500; text-wrap: balance; }
+.hero h1 span { display: block; margin-top: 14px; font-family: var(--sans); font-size: 0.3em; color: #898d94; letter-spacing: 0.1em; font-weight: 550; }
+.hero-title { margin: 26px 0 0; max-width: 780px; font-size: 18px; font-weight: 650; }
+.hero-intro { margin: 16px 0 0; max-width: 720px; color: var(--muted); font-size: 15.5px; }
+.hero-links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 28px; }
+.button { display: inline-flex; align-items: center; justify-content: center; min-height: 43px; padding: 9px 16px; border-radius: 9px; text-decoration: none; font-size: 13px; font-weight: 700; cursor: pointer; }
+.button-dark { background: var(--text); color: #fff; border: 1px solid var(--text); }
+.button-light { background: var(--surface); border: 1px solid var(--line); color: var(--text); }
+.profile-card { overflow: hidden; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); }
+.profile-card img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 40%; background: #e7e9ed; }
+.profile-content { display: flex; flex-direction: column; gap: 5px; padding: 19px; }
+.profile-content strong { font-size: 13.5px; }
+.profile-content span { color: var(--muted); font-size: 12px; }
+.profile-divider { height: 1px; background: var(--line); margin: 8px 0; }
+
+/* sections */
+.section { padding: 80px 0; }
+.section-alt { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.section-heading { display: grid; grid-template-columns: 62px 1fr; gap: 18px; margin-bottom: 34px; }
+.section-label { margin: 4px 0 0; color: var(--blue); font-family: var(--serif); font-size: 17px; line-height: 1; font-weight: 600; }
+.section-heading h2 { font-family: var(--serif); font-size: clamp(32px, 4vw, 46px); font-weight: 500; letter-spacing: -0.025em; line-height: 1.1; }
+.section-heading p:not(.section-label) { margin: 10px 0 0; max-width: 760px; color: var(--muted); font-size: 14.5px; line-height: 1.55; }
+.indent { margin-left: 80px; }
+
+.interest-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.interest-card { padding: 18px 20px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); display: flex; gap: 14px; align-items: baseline; }
+.interest-card .num { color: #a2a5ab; font-size: 10px; font-weight: 800; }
+.interest-card h3 { font-size: 15px; font-weight: 650; }
+
+.publication-list { border-top: 1px solid var(--line); }
+.pub-row { display: grid; grid-template-columns: 90px minmax(0, 1fr) 190px; gap: 20px; padding: 26px 0; border-bottom: 1px solid var(--line); }
+.pub-year { color: #878b93; font-family: var(--serif); font-size: 14.5px; padding-top: 2px; }
+.pub-title { font-size: 16px; line-height: 1.45; font-weight: 700; }
+.pub-with { margin: 6px 0 0; color: #50545c; font-size: 13px; }
+.pub-text { margin: 10px 0 0; color: var(--muted); font-size: 13.5px; line-height: 1.6; max-width: 66ch; }
+.pub-note { margin: 10px 0 0; color: #50545c; font-size: 12.5px; }
+.pub-note i { color: var(--text); }
+.pub-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+.badge { width: fit-content; max-width: 190px; text-align: right; border-radius: 999px; padding: 4px 8px; font-size: 10.5px; line-height: 1.35; font-weight: 800; }
+.badge-role { color: var(--blue); background: var(--blue-soft); }
+.badge-status { color: var(--warm); background: var(--warm-soft); }
+.badge-venue { color: #60646c; background: #f0f1f3; }
+.badge-green { color: var(--green); background: var(--green-soft); }
+
+.timeline { display: flex; flex-direction: column; gap: 0; }
+.timeline-item { display: grid; grid-template-columns: 150px 1fr; gap: 14px; padding: 0 0 22px; }
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-date { color: #8d9198; font-size: 12.5px; padding-top: 2px; }
+.timeline-item strong { display: block; font-size: 15px; }
+.timeline-item em { display: block; font-style: normal; color: #50545c; font-size: 13px; margin-top: 2px; }
+.timeline-item p { margin: 6px 0 0; color: var(--muted); font-size: 13.5px; max-width: 66ch; }
+
+.about-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 38px; }
+.about-lead { font-family: var(--serif); font-size: 23px; line-height: 1.45; text-wrap: balance; }
+.about-text p:not(.about-lead) { margin-top: 14px; color: var(--muted); font-size: 13.5px; }
+.skills h3 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 10px; }
+
+.contact { padding: 70px 0; color: #fff; background: var(--dark); }
+.contact .eyebrow { color: #9bb5d4; }
+.contact-inner { display: grid; grid-template-columns: 1fr 0.8fr; gap: 60px; align-items: end; }
+.contact h2 { font-family: var(--serif); font-size: clamp(32px, 4vw, 46px); font-weight: 500; }
+.contact p { color: #b6bac2; font-size: 13.5px; margin-top: 12px; max-width: 60ch; }
+.contact-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 13.5px; }
+.contact-list li { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.contact-list .k { color: #8f9299; width: 5.5rem; font-size: 12px; }
+.contact-list a { color: #fff; text-underline-offset: 4px; }
+.copy { border: 1px solid #3a3e46; background: transparent; color: #b6bac2; border-radius: 999px; padding: 2px 9px; font-size: 11px; cursor: pointer; }
+footer { padding: 20px 0; color: #8f9299; background: var(--dark); border-top: 1px solid var(--dark-line); }
+.footer-inner { display: flex; justify-content: space-between; gap: 20px; font-size: 11px; }
+
+body[data-lang="zh"] { font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", var(--sans); }
+body[data-lang="zh"] .hero h1, body[data-lang="zh"] .section-heading h2, body[data-lang="zh"] .contact h2, body[data-lang="zh"] .about-lead, body[data-lang="zh"] .pub-year, body[data-lang="zh"] .section-label { font-family: var(--sans); }
+body[data-lang="zh"] .hero h1 { letter-spacing: -0.02em; }
+
+@media (max-width: 900px) {
+  .nav-links { display: none; position: fixed; top: calc(70px + env(safe-area-inset-top, 0px)); left: 20px; right: 20px; padding: 10px; flex-direction: column; align-items: stretch; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; z-index: 60; }
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: 9px; }
+  .menu-button { display: block; }
+  .hero { grid-template-columns: 1fr; }
+  .profile-card { max-width: 520px; }
+  .interest-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 650px) {
+  .container { width: min(calc(100% - 32px), var(--max)); }
+  .hero { padding-top: 48px; }
+  .hero h1 { font-size: 50px; }
+  .hero-title { font-size: 16px; }
+  .section { padding: 60px 0; }
+  .section-heading { grid-template-columns: 1fr; gap: 2px; }
+  .section-label { margin: 0; }
+  .indent { margin-left: 0; }
+  .interest-grid { grid-template-columns: 1fr; }
+  .pub-row { grid-template-columns: 1fr; gap: 10px; }
+  .pub-meta { align-items: flex-start; flex-direction: row; flex-wrap: wrap; }
+  .badge { text-align: left; max-width: none; }
+  .timeline-item { grid-template-columns: 1fr; gap: 4px; }
+  .contact-inner { grid-template-columns: 1fr; }
+  .footer-inner { flex-direction: column; gap: 4px; }
+}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="#home">Haohong Zheng <span>郑浩宏</span></a>
+    <nav class="nav-links" id="nav-links">
+      <a href="#interests" data-i18n="nav.interests">Interests</a>
+      <a href="#research" data-i18n="nav.research">Research</a>
+      <a href="#experience" data-i18n="nav.experience">Experience</a>
+      <a href="#education" data-i18n="nav.education">Education</a>
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="lang-button" id="lang-button" type="button">中文</button>
+      <button class="menu-button" id="menu-button" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero container" id="home">
+  <div class="hero-copy">
+    <p class="eyebrow" data-i18n="hero.eyebrow">AI for Science · Machine Learning · Biostatistics</p>
+    <h1>Haohong Zheng <span>郑浩宏 · Austin</span></h1>
+    <p class="hero-title" data-i18n="hero.title">Undergraduate researcher in Statistics and Data Science, University of Michigan</p>
+    <!-- EDIT: one-paragraph introduction. English here; Chinese is in I18N.zh["hero.intro"] below. -->
+    <p class="hero-intro" data-i18n="hero.intro">I work on statistical inference for tabular foundation models and on survival analysis with electronic health records. I plan to apply to PhD programs in statistics, biostatistics and AI for Fall 2028.</p>
+    <div class="hero-links">
+      <a href="#research" class="button button-dark" data-i18n="hero.work">View research</a>
+      <button type="button" class="button button-light copy-btn" data-copy="haohongz@umich.edu">haohongz@umich.edu</button>
+    </div>
+  </div>
+  <aside class="profile-card">
+    <!-- EDIT: photo. Replace photo.jpg to change it. -->
+    <img src="photo.jpg" alt="Haohong Zheng">
+    <div class="profile-content">
+      <strong data-i18n="card.school">University of Michigan, Ann Arbor</strong>
+      <span data-i18n="card.degree">B.S. in Statistics &amp; Data Science · Minors in Computer Science &amp; Business</span>
+      <span class="profile-divider"></span>
+      <span data-i18n="card.research">Research with the Kidney Epidemiology and Cost Center (Michigan), Peking University and Zhejiang University</span>
+      <span data-i18n="card.grad">Expected graduation: December 2027</span>
+    </div>
+  </aside>
+</section>
+
+<section class="section container" id="interests">
+  <div class="section-heading"><p class="section-label">01</p><div><h2 data-i18n="interests.title">Research interests</h2><p data-i18n="interests.subtitle">AI and machine-learning methods, and their use in science and health data.</p></div></div>
+  <!-- EDIT: research interests. One card per area; each has an English line here and a Chinese line in I18N.zh. -->
+  <div class="interest-grid indent">
+    <div class="interest-card"><span class="num">01</span><h3 data-i18n="int.1">AI for Science</h3></div>
+    <div class="interest-card"><span class="num">02</span><h3 data-i18n="int.2">AI in healthcare</h3></div>
+    <div class="interest-card"><span class="num">03</span><h3 data-i18n="int.3">Tabular foundation models and transfer learning</h3></div>
+    <div class="interest-card"><span class="num">04</span><h3 data-i18n="int.4">Uncertainty quantification</h3></div>
+    <div class="interest-card"><span class="num">05</span><h3 data-i18n="int.5">Machine learning and LLMs</h3></div>
+    <div class="interest-card"><span class="num">06</span><h3 data-i18n="int.6">Deep learning</h3></div>
+    <div class="interest-card"><span class="num">07</span><h3 data-i18n="int.7">AI agents</h3></div>
+    <div class="interest-card"><span class="num">08</span><h3 data-i18n="int.8">Causal inference</h3></div>
+    <div class="interest-card"><span class="num">09</span><h3 data-i18n="int.9">Survival analysis and biostatistics</h3></div>
+    <div class="interest-card"><span class="num">10</span><h3 data-i18n="int.10">Synthetic data and generative models</h3></div>
+    <div class="interest-card"><span class="num">11</span><h3 data-i18n="int.11">EHR and clinical data</h3></div>
+    <div class="interest-card"><span class="num">12</span><h3 data-i18n="int.12">Reinforcement learning</h3></div>
+  </div>
+</section>
+
+<section class="section section-alt" id="research">
+  <div class="container">
+    <div class="section-heading"><p class="section-label">02</p><div><h2 data-i18n="research.title">Research</h2><p data-i18n="research.subtitle">Projects I work on as a research assistant.</p></div></div>
+    <div class="publication-list indent">
+
+      <article class="pub-row">
+        <div class="pub-year" data-i18n="p1.when">2026 – present</div>
+        <div>
+          <h3 class="pub-title" data-i18n="p1.title">Uncertainty quantification for tabular foundation models</h3>
+          <p class="pub-with" data-i18n="p1.with">With Prof. Zijian Guo (Zhejiang University) and Prof. Molei Liu (Peking University)</p>
+          <p class="pub-text" data-i18n="p1.text">TabPFN-type models give accurate predictions on small tables, but they come with no confidence interval for the conditional mean. We build intervals that reach their nominal coverage under repeated sampling. I ran the Monte Carlo study, with five data-generating processes and 100 runs each, and built the experiment pipeline on a SLURM GPU cluster. In these simulations the naive baselines covered the truth 33% to 68% of the time at a 95% nominal level; the proposed intervals stay close to 95%.</p>
+          <p class="pub-note"><span data-i18n="p1.note">Manuscript:</span> Y. Shi, H. Zheng, M. Liu, Z. Guo. <i>Context-Uncertainty Quantification for Tabular Foundation Models.</i> 2026.</p>
+        </div>
+        <div class="pub-meta">
+          <span class="badge badge-venue">ZJU × PKU</span>
+          <span class="badge badge-role" data-i18n="role.ra">Research assistant</span>
+          <span class="badge badge-status" data-i18n="status.ms">Manuscript</span>
+        </div>
+      </article>
+
+      <article class="pub-row">
+        <div class="pub-year" data-i18n="p2.when">2026</div>
+        <div>
+          <h3 class="pub-title" data-i18n="p2.title">Knowledge-guided TabPFN</h3>
+          <p class="pub-with" data-i18n="p2.with">With Prof. Molei Liu (Peking University)</p>
+          <p class="pub-text" data-i18n="p2.text">A tabular foundation model does not know what its columns mean. We inject an external knowledge graph (Hetionet, with TransE embeddings) into a frozen TabPFN or TabICL through small trainable gates, for prediction with far more features than samples. On simulated data with interaction structure, injecting the graph at the attention level raised accuracy from about 50% to 73%. I contributed the adapter design, ran the layer-wise experiments, and reviewed more than 40 related papers to position the method.</p>
+        </div>
+        <div class="pub-meta">
+          <span class="badge badge-venue">PKU</span>
+          <span class="badge badge-role" data-i18n="role.ra">Research assistant</span>
+        </div>
+      </article>
+
+      <article class="pub-row">
+        <div class="pub-year" data-i18n="p3.when">2026 – present</div>
+        <div>
+          <h3 class="pub-title" data-i18n="p3.title">Synthetic survival data for electronic health records</h3>
+          <p class="pub-with" data-i18n="p3.with">With Prof. Kevin He, Kidney Epidemiology and Cost Center, University of Michigan</p>
+          <p class="pub-text" data-i18n="p3.text">Synthetic patient records are useful only if they keep the time-to-event structure of the real data. Our group is building a benchmark for generators of synthetic survival data. I reproduced GAN-based generators such as SurvivalGAN under one interface so they can be compared directly, and I work on the evaluation side: how closely a synthetic cohort matches the real one in its survival distribution and its censoring pattern.</p>
+        </div>
+        <div class="pub-meta">
+          <span class="badge badge-venue">Michigan KECC</span>
+          <span class="badge badge-role" data-i18n="role.ra">Research assistant</span>
+        </div>
+      </article>
+
+      <article class="pub-row">
+        <div class="pub-year" data-i18n="p4.when">2024</div>
+        <div>
+          <h3 class="pub-title" data-i18n="p4.title">Disease risk prediction from wearable and medical-record data</h3>
+          <p class="pub-text" data-i18n="p4.text">We predicted diabetes and cardiovascular risk from wearable-device and medical-record data, with about 5,000 samples and 45 features. I cleaned the data and trained neural-network and tree-based models.</p>
+          <p class="pub-note"><span data-i18n="p4.note">Paper accepted by</span> <i>Frontiers in Computing and Intelligent Systems</i>.</p>
+        </div>
+        <div class="pub-meta">
+          <span class="badge badge-role" data-i18n="role.ra">Research assistant</span>
+          <span class="badge badge-green" data-i18n="status.pub">Published</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="section container" id="experience">
+  <div class="section-heading"><p class="section-label">03</p><div><h2 data-i18n="exp.title">Experience</h2></div></div>
+  <div class="timeline indent">
+    <div class="timeline-item">
+      <div class="timeline-date" data-i18n="e1.when">Jul – Aug 2025</div>
+      <div>
+        <strong data-i18n="e1.org">Gree Group headquarters, Finance Department · Zhuhai</strong>
+        <em data-i18n="e1.role">Data analytics intern</em>
+        <p data-i18n="e1.text">Wrote a Python tool that replaced manual invoice processing; data retrieval went from about three hours to under fifteen minutes. Built dashboards covering about 80 companies and wrote the user manual for the tool.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date" data-i18n="e2.when">Jan – Apr 2025</div>
+      <div>
+        <strong data-i18n="e2.org">Beijing Academy of Science and Technology · Beijing</strong>
+        <em data-i18n="e2.role">Research assistant, big data</em>
+        <p data-i18n="e2.text">Processed urban traffic data for a smart-city project, with more than two million records. Used clustering and small neural networks to find patterns in traffic flow.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="education">
+  <div class="container">
+    <div class="section-heading"><p class="section-label">04</p><div><h2 data-i18n="edu.title">Education</h2></div></div>
+    <div class="timeline indent">
+      <div class="timeline-item">
+        <div class="timeline-date" data-i18n="d1.when">Expected Dec 2027</div>
+        <div>
+          <strong data-i18n="d1.org">University of Michigan, Ann Arbor</strong>
+          <em data-i18n="d1.role">B.S. in Statistics and Data Science (double major) · Minors in Computer Science and Business · GPA 3.8 / 4.0</em>
+          <p data-i18n="d1.text">Coursework includes probability, regression analysis, Bayesian data analysis, machine learning, data structures and algorithms, and databases.</p>
+        </div>
+      </div>
+  </div>
+</section>
+
+<section class="section container" id="about">
+  <div class="section-heading"><p class="section-label">05</p><div><h2 data-i18n="about.title">About</h2></div></div>
+  <div class="about-grid indent">
+    <div class="about-text">
+      <p class="about-lead" data-i18n="about.lead">My current projects ask the same question: when can we trust the output of a flexible model on health data?</p>
+      <p data-i18n="about.p1">I work with Prof. Zijian Guo and Prof. Molei Liu on confidence intervals for predictions from TabPFN-type models, and with Prof. Kevin He at Michigan's Kidney Epidemiology and Cost Center on evaluating synthetic survival data.</p>
+      <p data-i18n="about.p2">Outside of research I play badminton and basketball, lift weights, cycle, take photographs, and watch films.</p>
+    </div>
+    <div class="skills">
+      <h3 data-i18n="skills.title">Skills</h3>
+      <div class="timeline">
+        <div class="timeline-item"><div class="timeline-date" data-i18n="sk.1">Programming</div><div><strong>Python, R, SQL, C++, Java</strong></div></div>
+        <div class="timeline-item"><div class="timeline-date" data-i18n="sk.2">Computing</div><div><strong data-i18n="sk.2v">SLURM GPU clusters, LaTeX</strong></div></div>
+        <div class="timeline-item"><div class="timeline-date" data-i18n="sk.3">Languages</div><div><strong data-i18n="sk.3v">Mandarin and Cantonese (native), English</strong></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container contact-inner">
+    <div>
+      <p class="eyebrow" data-i18n="contact.eyebrow">Contact</p>
+      <h2 data-i18n="contact.title">Get in touch</h2>
+      <p data-i18n="contact.text">Email is the best way to reach me. I am glad to hear from people working on tabular foundation models, survival analysis, or statistical methods for health data.</p>
+    </div>
+    <ul class="contact-list">
+      <li><span class="k" data-i18n="contact.email">Email</span><span id="email-text">haohongz@umich.edu</span><button type="button" class="copy copy-btn" data-copy="haohongz@umich.edu" data-i18n="contact.copy">Copy</button></li>
+      <li><span class="k" data-i18n="contact.phoneUS">Phone (US)</span><span>(734) 905-0355</span></li>
+      <li><span class="k" data-i18n="contact.phoneCN">Phone (CN)</span><span>+86 136 7272 6168</span></li>
+      <li><span class="k">GitHub</span><a href="https://github.com/haohongz">github.com/haohongz</a></li>
+      <li><span class="k" data-i18n="contact.location">Location</span><span data-i18n="contact.locationv">Ann Arbor, Michigan</span></li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© Haohong Zheng</span>
+    <span data-i18n="footer.note">Last updated October 2026 · Bilingual homepage</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // EDIT: Chinese text lives here. Each key matches a data-i18n attribute in the HTML.
+  var I18N = {
+    en: null, // English is the text already in the HTML
+    zh: {
+      "nav.interests": "研究兴趣", "nav.research": "研究", "nav.experience": "实习", "nav.education": "教育", "nav.about": "关于", "nav.contact": "联系",
+      "hero.eyebrow": "AI for Science · 机器学习 · 生物统计",
+      "hero.title": "密歇根大学统计与数据科学专业本科生，研究助理",
+      "hero.intro": "我目前做两方面的工作：表格基础模型的统计推断，以及基于电子病历的生存分析。计划申请 2028 年秋季入学的统计、生物统计和 AI 方向博士项目。",
+      "hero.work": "查看研究",
+      "card.school": "密歇根大学安娜堡分校",
+      "card.degree": "统计学与数据科学双学位 · 辅修计算机科学与商科",
+      "card.research": "在密歇根大学 KECC、北京大学和浙江大学的课题组做研究",
+      "card.grad": "预计 2027 年 12 月毕业",
+      "interests.title": "研究兴趣",
+      "interests.subtitle": "AI 与机器学习方法，以及它们在科学研究和医疗数据中的应用。",
+      "int.1": "AI for Science", "int.2": "医疗 AI", "int.3": "表格基础模型与迁移学习", "int.4": "不确定性量化", "int.5": "机器学习与大语言模型", "int.6": "深度学习", "int.7": "AI 智能体", "int.8": "因果推断", "int.9": "生存分析与生物统计", "int.10": "合成数据与生成模型", "int.11": "电子病历与临床数据", "int.12": "强化学习",
+      "research.title": "研究",
+      "research.subtitle": "以研究助理身份参与的课题。",
+      "role.ra": "研究助理", "status.ms": "论文稿", "status.pub": "已发表",
+      "p1.when": "2026 年至今",
+      "p1.title": "表格基础模型的不确定性量化",
+      "p1.with": "合作导师：Zijian Guo 教授（浙江大学）、刘默雷教授（北京大学）",
+      "p1.text": "TabPFN 这类模型在小规模表格数据上预测很准，但不提供条件均值的置信区间。我们构造的区间在重复抽样下能达到名义覆盖率。我负责蒙特卡洛模拟（5 种数据生成机制，各 100 次重复），并在 SLURM GPU 集群上搭建了实验流程。模拟中，朴素基线在 95% 名义水平下的覆盖率只有 33% 到 68%，而我们的区间接近 95%。",
+      "p1.note": "论文稿：",
+      "p2.when": "2026 年",
+      "p2.title": "知识引导的 TabPFN",
+      "p2.with": "合作导师：刘默雷教授（北京大学）",
+      "p2.text": "表格基础模型并不知道每一列的含义。我们把外部知识图谱（Hetionet，TransE 嵌入）通过少量可训练的门控注入冻结的 TabPFN 或 TabICL，用于特征数远多于样本数的预测问题。在带交互结构的模拟数据上，在注意力层注入知识图谱把准确率从约 50% 提到 73%。我负责适配器设计和逐层实验，并梳理了 40 多篇相关文献来确定方法的定位。",
+      "p3.when": "2026 年至今",
+      "p3.title": "面向电子病历的合成生存数据",
+      "p3.with": "合作导师：Zhi (Kevin) He 教授，密歇根大学 Kidney Epidemiology and Cost Center",
+      "p3.text": "合成病历只有保留真实数据的生存时间结构才有用。课题组在搭建一个合成生存数据生成器的评测基准。我把 SurvivalGAN 等基于 GAN 的生成器统一到同一个接口下以便直接比较，并负责评估这一侧：合成队列在生存分布和删失模式上与真实队列有多接近。",
+      "p4.when": "2024 年",
+      "p4.title": "基于可穿戴设备与病历数据的疾病风险预测",
+      "p4.text": "用可穿戴设备和病历数据预测糖尿病和心血管疾病风险，约 5,000 个样本、45 个特征。我负责数据清洗，并训练了神经网络和树模型。",
+      "p4.note": "论文发表于",
+      "exp.title": "实习经历",
+      "e1.when": "2025 年 7 月至 8 月",
+      "e1.org": "格力集团总部财务部 · 珠海",
+      "e1.role": "数据分析实习生",
+      "e1.text": "写了一个 Python 工具替代人工发票处理，数据检索从约三小时缩短到十五分钟以内。为约 80 家公司搭建了数据看板，并编写了工具的使用手册。",
+      "e2.when": "2025 年 1 月至 4 月",
+      "e2.org": "北京市科学技术研究院 · 北京",
+      "e2.role": "大数据研究助理",
+      "e2.text": "为智慧城市项目处理城市交通数据，记录超过两百万条。用聚类和小型神经网络分析交通流量的模式。",
+      "edu.title": "教育经历",
+      "d1.when": "预计 2027 年 12 月毕业",
+      "d1.org": "密歇根大学安娜堡分校",
+      "d1.role": "统计学与数据科学双学位 · 辅修计算机科学与商科 · GPA 3.8 / 4.0",
+      "d1.text": "主要课程：概率论、回归分析、贝叶斯数据分析、机器学习、数据结构与算法、数据库。",
+      "about.title": "关于我",
+      "about.lead": "我现在做的几个课题都在问同一个问题：在医疗数据上，什么时候可以相信一个灵活模型的输出？",
+      "about.p1": "我和 Zijian Guo 教授、刘默雷教授研究 TabPFN 类模型预测的置信区间，也和密歇根大学 KECC 的 Kevin He 教授研究合成生存数据的评估。",
+      "about.p2": "研究之外，我打羽毛球和篮球，健身，骑车，拍照，看电影。",
+      "skills.title": "技能",
+      "sk.1": "编程", "sk.2": "计算", "sk.2v": "SLURM GPU 集群、LaTeX", "sk.3": "语言", "sk.3v": "普通话、粤语（母语），英语",
+      "contact.eyebrow": "联系方式", "contact.title": "欢迎联系",
+      "contact.text": "邮件是最方便的联系方式。欢迎做表格基础模型、生存分析或医疗数据统计方法的同行来信交流。",
+      "contact.email": "邮箱", "contact.copy": "复制", "contact.phoneUS": "电话（美国）", "contact.phoneCN": "电话（中国）", "contact.location": "所在地", "contact.locationv": "美国密歇根州安娜堡",
+      "footer.note": "更新于 2026 年 10 月 · 中英双语主页"
+    }
+  };
+
+  var lang = "en";
+  try { lang = localStorage.getItem("hz-lang") || "en"; } catch (e) {}
+  var nodes = Array.prototype.slice.call(document.querySelectorAll("[data-i18n]"));
+  nodes.forEach(function (el) { el.dataset.en = el.textContent; });
+
+  function render() {
+    document.body.dataset.lang = lang;
+    try { document.documentElement.lang = lang === "zh" ? "zh-CN" : "en"; } catch (e) {}
+    document.getElementById("lang-button").textContent = lang === "en" ? "中文" : "EN";
+    nodes.forEach(function (el) {
+      var key = el.dataset.i18n;
+      el.textContent = lang === "zh" && I18N.zh[key] ? I18N.zh[key] : el.dataset.en;
+    });
+  }
+  document.getElementById("lang-button").addEventListener("click", function () {
+    lang = lang === "en" ? "zh" : "en";
+    try { localStorage.setItem("hz-lang", lang); } catch (e) {}
+    render();
+  });
+  render();
+
+  var menu = document.getElementById("menu-button"), links = document.getElementById("nav-links");
+  menu.addEventListener("click", function () {
+    var open = links.classList.toggle("open");
+    menu.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  links.addEventListener("click", function (e) { if (e.target.tagName === "A") { links.classList.remove("open"); menu.setAttribute("aria-expanded", "false"); } });
+
+  Array.prototype.slice.call(document.querySelectorAll(".copy-btn")).forEach(function (btn) {
+    var label = btn.textContent;
+    btn.addEventListener("click", function () {
+      var val = btn.dataset.copy;
+      var done = function () { btn.textContent = lang === "zh" ? "已复制" : "Copied"; setTimeout(function () { btn.textContent = btn.dataset.i18n ? (lang === "zh" ? I18N.zh[btn.dataset.i18n] : btn.dataset.en) : label; }, 1600); };
+      var fail = function () { window.getSelection().selectAllChildren(document.getElementById("email-text")); };
+      try { navigator.clipboard.writeText(val).then(done, fail); } catch (e) { fail(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
